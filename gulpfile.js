@@ -11,6 +11,10 @@ var gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify'),
+		del          = require('del'), // Подключаем библиотеку для удаления файлов и папок
+	    imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
+	    pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
+	    cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
 		rsync         = require('gulp-rsync');
 
 gulp.task('browser-sync', function() {
@@ -41,7 +45,7 @@ gulp.task('scripts', function() {
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Mifify js (opt.)
+	.pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
@@ -66,6 +70,17 @@ gulp.task('rsync', function() {
 	}))
 });
 
+gulp.task('img', function() {
+    return gulp.src('app/img/**/*') // Берем все изображения из app
+        .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
+});
+
 gulp.task('clean', function() {
     return del.sync('dist'); // Удаляем папку dist перед сборкой
 });
@@ -88,21 +103,48 @@ if (gulpversion == 4) {
 	gulp.task('default', gulp.parallel('styles', 'scripts', 'browser-sync', 'watch'));
 }
 
-gulp.task('build', ['img', 'less', 'libs', 'scripts'], function() {
+exports.clean = del.bind(null, ['dist']);
 
-    gulp.src([ // Переносим библиотеки в продакшен
-        'app/css/main.css',
-        'app/css/libs.css'
-        ])
-    .pipe(gulp.dest('dist/css'));
+gulp.task('dest', function () {
 
-    gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
-    .pipe(gulp.dest('dist/fonts'));
+    var cssDist = gulp.src([
+        'app/css/style.min.css',
+    ]).pipe(gulp.dest('dist/css'));
+    var fontsDist = gulp.src('app/fonts/**/*').pipe(gulp.dest('dist/fonts'));
+    var jsDist = gulp.src(['app/js/**/*', '!app/js/common.js']).pipe(gulp.dest('dist/js'));
+    var htmlDist = gulp.src(['app/*.html', '!app/template.html']).pipe(gulp.dest('dist'));
+    var imgDist = gulp.src('app/img/**/*')
+        .pipe(cache(imagemin({
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{
+                removeViewBox: false
+            }],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('dist/img'));
 
-    gulp.src('app/js/**/*') // Переносим скрипты в продакшен
-    .pipe(gulp.dest('dist/js'));
-
-    gulp.src('app/*.html') // Переносим HTML в продакшен
-    .pipe(gulp.dest('dist'));
+    return cssDist, fontsDist, jsDist, htmlDist, imgDist;
 
 });
+
+gulp.task('build', gulp.series('styles', 'scripts', 'dest'));
+
+// gulp.task('build', ['img', 'less', 'libs', 'scripts'], function() {
+
+//     gulp.src([ // Переносим библиотеки в продакшен
+//         'app/css/main.css',
+//         'app/css/libs.css'
+//         ])
+//     .pipe(gulp.dest('dist/css'));
+
+//     gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
+//     .pipe(gulp.dest('dist/fonts'));
+
+//     gulp.src('app/js/**/*') // Переносим скрипты в продакшен
+//     .pipe(gulp.dest('dist/js'));
+
+//     gulp.src('app/*.html') // Переносим HTML в продакшен
+//     .pipe(gulp.dest('dist'));
+
+// });

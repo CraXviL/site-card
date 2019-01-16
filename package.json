@@ -1,12 +1,12 @@
 {
-  "name": "optimizedhtml",
+  "name": "site-card.github.io",
   "version": "4.0.0",
-  "description": "OptimizedHTML 4 - Start HTML Template",
+  "description": "My site-card",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "WebDesign Master",
+  "author": "CraXviL",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.3",
@@ -19,6 +19,11 @@
     "gulp-rsync": "0.0.8",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1",
-    "gulp-util": "^3.0.8"
+    "gulp-cache": "^1.0.2",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-imagemin": "^4.1.0",
+    "del": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "imagemin-pngquant": "^6.0.0"
   }
 }
