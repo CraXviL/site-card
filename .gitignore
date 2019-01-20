@@ -1,6 +1,7 @@
 /node_modules/
+/app/libs/
 /.git/
-/исходники
+/!source/
 /**/_backstage
 /**/package-lock.json
 /**/Thumbs.db

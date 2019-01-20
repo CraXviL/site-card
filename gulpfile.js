@@ -41,6 +41,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/popover/popover.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
@@ -87,6 +88,7 @@ gulp.task('dest', function () {
     let fontsDist = gulp.src('app/fonts/**/*').pipe(gulp.dest('docs/fonts'));
     let jsDist = gulp.src(['app/js/**/*', '!app/js/common.js']).pipe(gulp.dest('docs/js'));
     let htmlDist = gulp.src(['app/*.html', '!app/template.html']).pipe(gulp.dest('docs'));
+    let htaccessDist = gulp.src(['app/.htaccess']).pipe(gulp.dest('docs'));
     let imgDist = gulp.src('app/img/**/*')
         .pipe(cache(imagemin({
             interlaced: true,
@@ -98,7 +100,7 @@ gulp.task('dest', function () {
         })))
         .pipe(gulp.dest('docs/img'));
 
-    return cssDist, fontsDist, jsDist, htmlDist, imgDist;
+    return cssDist, fontsDist, jsDist, htmlDist, htaccessDist, imgDist;
 
 });
 
