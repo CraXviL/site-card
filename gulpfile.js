@@ -22,7 +22,7 @@ gulp.task('browser-sync', function() {
 			baseDir: 'app'
 		},
 		notify: false,
-		// open: false,
+		open: false,
 		// online: false, // Work Offline Without Internet Connection
 		// tunnel: true, tunnel: "projectname", // Demonstration page: http://projectname.localtunnel.me
 	});
@@ -42,7 +42,7 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/popover/popover.js',
-		'app/js/common.js', // Always at the end
+		'app/js/scripts.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
 	.pipe(uglify()) // Mifify js (opt.)
@@ -74,7 +74,7 @@ exports.clean = del.bind(null, ['docs']);
 
 gulp.task('watch', function() {
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('scripts'));
+	gulp.watch(['libs/**/*.js', 'app/js/scripts.js'], gulp.parallel('scripts'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 });
 
@@ -86,7 +86,7 @@ gulp.task('dest', function () {
         'app/css/style.min.css',
     ]).pipe(gulp.dest('docs/css'));
     let fontsDist = gulp.src('app/fonts/**/*').pipe(gulp.dest('docs/fonts'));
-    let jsDist = gulp.src(['app/js/**/*', '!app/js/common.js']).pipe(gulp.dest('docs/js'));
+    let jsDist = gulp.src(['app/js/**/*', '!app/js/scripts.js']).pipe(gulp.dest('docs/js'));
     let htmlDist = gulp.src(['app/*.html', '!app/template.html']).pipe(gulp.dest('docs'));
     let htaccessDist = gulp.src(['app/.htaccess']).pipe(gulp.dest('docs'));
     let imgDist = gulp.src('app/img/**/*')
