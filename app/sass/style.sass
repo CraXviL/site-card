@@ -25,6 +25,13 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+	ul
+		padding-left: 0
+
+.clearfix:after
+	content: ""
+	display: table
+	clear: both
 
 .img-responsive
 	display: block
@@ -39,7 +46,7 @@ body
 b, strong
 	font-weight: bold
 
-.main-menu
+header ul
 	margin-top: 46px
 	list-style-type: none
 	a
@@ -65,44 +72,54 @@ hgroup
 		font-size: 33px
 		letter-spacing: 1px
 
-.photo-block
+#photo-block
 	&>img
 		position: absolute
-		z-index: -1
+		z-index: -10
 	.arrowLeft, .arrowRight
 		top: 210px
 	.arrowLeft
-		right: 430px
+		right: 437px
 	.arrowRight
-		right: -45px
+		right: -25px
 	.photo
 		top: -50px
-		right: 10px
+		right: 25px
+		z-index: -1
 
 #about-block
 	height: 630px
 	margin-top: 297px
-	padding: 65px 5px 0 78px
+	padding: 65px 20px 0 65px
 	background: url('../img/main/bg-about-block.jpg') repeat-y top
 	h4
 		width: 100%
-		height: 13px
 		color: #a2e22c
 		font-family: "Futura PT"
 		font-size: 33px
-		letter-spacing: 1.65px
+		letter-spacing: .7px
 		text-transform: uppercase
 	p
+		margin-top: -10px
 		font-size: 33px
 		line-height: 40px
 		letter-spacing: 0.82px
+	.slashes
+		width: 200px
+		margin: -457px 0 0 -1260px
+		font-size: 25px
+		letter-spacing: 23px
+		line-height: 58px
+		opacity: .1
 
+.skills
+	margin-top: 125px
 
 h3
 	text-transform: uppercase
 	transform: rotate(90deg)
 	font-size: 24px
-	margin: 200px 63px
+	margin: 224px 592px
 	letter-spacing: 2px
 
 
