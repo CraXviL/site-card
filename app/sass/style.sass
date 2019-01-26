@@ -29,24 +29,6 @@ body
 		padding-left: 0
 		list-style-type: none
 
-.clearfix:after
-	content: ""
-	display: table
-	clear: both
-
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
-	&.img-width
-		width: 100%
-
-.text-center
-	text-align: center
-
-b, strong
-	font-weight: bold
-
 header ul
 	margin-top: 46px
 	a
@@ -55,9 +37,10 @@ header ul
 		color: $text
 		margin-right: 63px
 		letter-spacing: 2px
-		text-decoration: none
 		opacity: .7
 	a:hover
+		text-decoration: none
+		color: $text
 		opacity: 1
 
 hgroup
@@ -72,8 +55,8 @@ hgroup
 		font-size: 33px
 		letter-spacing: 1px
 
-#photo-block
-	&>img
+section#main
+	img
 		position: absolute
 		z-index: -10
 	.arrowLeft, .arrowRight
@@ -87,11 +70,11 @@ hgroup
 		right: 25px
 		z-index: -1
 
-#about-block
+section#about
 	height: 630px
 	margin-top: 297px
 	padding: 65px 20px 0 65px
-	background: url('../img/main/bg-about-block.jpg') repeat-y top
+	background: url('../img/main/bg-block.jpg') repeat-y top
 	h4
 		width: 100%
 		color: #a2e22c
@@ -112,19 +95,21 @@ hgroup
 	line-height: 58px
 	opacity: .1
 
-.skills
+section#skills
 	margin-top: 125px
+	picture:last-child
+		margin-top: -10px
 
 h3
 	transform: rotate(90deg)
 	font-size: 24px
-	margin: 140px 655px
+	margin: 150px 660px
 	letter-spacing: 2px
 	text-transform: uppercase
 
-#portfolio-block
+section#portfolio
 	ul
-		margin-top: 75px
+		margin-top: 65px
 		li a
 			font-family: "Futura PT"
 			font-size: 33px
@@ -136,12 +121,56 @@ h3
 		@extend .slashes
 		margin: -185px 0 0 -150px
 
-#order-block
+section#order
 	h3
 		@extend h3
-		margin: 172px 608px
+		margin: 106px 660px
 	.slashes
 		@extend .slashes
-		margin: -275px 0 0 -140px
+		margin: -145px 0 0 -150px
+	form
+		height: 600px
+		width: 785px
+		margin: -65px auto
+		background: url('../img/main/bg-block.jpg') repeat-y top
+		input:not([type="submit"])
+			width: 780px
+			padding: 59px 0 14px 0
+			font-size: 24px
+			background-color: transparent
+			box-sizing: border-box 
+			transition: all .5s ease
+			border: 1px solid transparent
+			border-bottom: 1px solid grey
+			opacity: .5
+		input.error
+			border: 1px solid #ff0000
+		input#submit
+			margin-top: 33px
+			float: right
+			color: #a2e22c
+			font-family: "Futura PT"
+			font-size: 33px
+			letter-spacing: 1.65px
+			text-transform: uppercase
+			background-color: transparent
+			border: 0
+		input#submit:hover
+			text-decoration: underline
+
+footer
+	padding-top: 145px
+	font-size: 24px
+	letter-spacing: 0.6px
+	ul
+		width: 157px
+		margin-top: -5px
+		img
+			transition: all .2s ease
+			opacity: 0.8
+		img:hover
+			opacity: 1
+
+
 
 @import "media" // Always at the end

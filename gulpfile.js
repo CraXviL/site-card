@@ -3,6 +3,8 @@ let syntax        = 'sass'; // Syntax: sass or scss;
 let gulp          = require('gulp'),
 		gutil         = require('gulp-util' ),
 		sass          = require('gulp-sass'),
+		babel         = require('gulp-babel');
+    	sourcemaps    = require('gulp-sourcemaps');
 		browserSync   = require('browser-sync'),
 		concat        = require('gulp-concat'),
 		uglify        = require('gulp-uglify'),
@@ -38,14 +40,27 @@ gulp.task('styles', function() {
 	.pipe(browserSync.stream());
 });
 
-gulp.task('scripts', function() {
+gulp.task('libs', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/popover/popover.js',
-		'app/js/scripts.js', // Always at the end
+		'app/libs/popover/popover.js'
 		])
+	.pipe(concat('libs.min.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest('app/js'))
+	.pipe(browserSync.reload({ stream: true }));
+});
+
+gulp.task('scripts', function() {
+	return gulp.src(['app/js/scripts.js'])
 	.pipe(concat('scripts.min.js'))
-	.pipe(uglify()) // Mifify js (opt.)
+	.pipe(babel({
+        presets: [
+            ["env", { "modules": false }]
+        ]
+    }))
+    .pipe(sourcemaps.write('.'))
+	.pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }));
 });
@@ -74,11 +89,11 @@ exports.clean = del.bind(null, ['docs']);
 
 gulp.task('watch', function() {
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
-	gulp.watch(['libs/**/*.js', 'app/js/scripts.js'], gulp.parallel('scripts'));
+	gulp.watch('app/js/scripts.js', gulp.parallel('scripts'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 });
 
-gulp.task('default', gulp.parallel('styles', 'scripts', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('styles', 'libs', 'scripts', 'browser-sync', 'watch'));
 
 gulp.task('dest', function () {
 
