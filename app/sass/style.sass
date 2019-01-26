@@ -10,7 +10,7 @@
 	color: #fff
 
 body
-	font-size: 16px
+	font-size: 24px
 	min-width: 320px
 	position: relative
 	line-height: 1.65
@@ -30,7 +30,7 @@ body
 		list-style-type: none
 
 header ul
-	margin-top: 46px
+	margin-top: 30px
 	a
 		text-transform: uppercase
 		font-size: 14px
@@ -44,11 +44,11 @@ header ul
 		opacity: 1
 
 hgroup
-	margin-top: 250px
+	margin-top: 245px
 	h1
 		font-family: "Futura PT"
 		font-size: 80px
-		text-indent: -5px
+		text-indent: -8px
 		letter-spacing: -1px
 	h2
 		margin-top: -28px
@@ -60,13 +60,13 @@ section#main
 		position: absolute
 		z-index: -10
 	.arrowLeft, .arrowRight
-		top: 210px
+		top: 205px
 	.arrowLeft
-		right: 437px
+		right: 438px
 	.arrowRight
-		right: -25px
+		right: -27px
 	.photo
-		top: -50px
+		top: -55px
 		right: 25px
 		z-index: -1
 
@@ -90,7 +90,6 @@ section#about
 
 .slashes
 	margin: -457px 0 0 -1310px
-	font-size: 25px
 	letter-spacing: 23px
 	line-height: 58px
 	opacity: .1
@@ -102,14 +101,14 @@ section#skills
 
 h3
 	transform: rotate(90deg)
-	font-size: 24px
-	margin: 150px 660px
+	margin: 145px 660px
+	font-size: 1em
 	letter-spacing: 2px
 	text-transform: uppercase
 
 section#portfolio
 	ul
-		margin-top: 65px
+		margin-top: 70px
 		li a
 			font-family: "Futura PT"
 			font-size: 33px
@@ -131,18 +130,20 @@ section#order
 	form
 		height: 600px
 		width: 785px
-		margin: -65px auto
+		margin: -75px auto
 		background: url('../img/main/bg-block.jpg') repeat-y top
 		input:not([type="submit"])
+			height: 120px
 			width: 780px
-			padding: 59px 0 14px 0
-			font-size: 24px
+			padding-top: 55px
+			font-size: 32px
+			color: $accent
 			background-color: transparent
-			box-sizing: border-box 
 			transition: all .5s ease
 			border: 1px solid transparent
 			border-bottom: 1px solid grey
 			opacity: .5
+		input::placeholder
 		input.error
 			border: 1px solid #ff0000
 		input#submit
@@ -159,8 +160,7 @@ section#order
 			text-decoration: underline
 
 footer
-	padding-top: 145px
-	font-size: 24px
+	padding-top: 160px
 	letter-spacing: 0.6px
 	ul
 		width: 157px
