@@ -27,6 +27,7 @@ body
 			border-color: green
 	ul
 		padding-left: 0
+		list-style-type: none
 
 .clearfix:after
 	content: ""
@@ -48,7 +49,6 @@ b, strong
 
 header ul
 	margin-top: 46px
-	list-style-type: none
 	a
 		text-transform: uppercase
 		font-size: 14px
@@ -104,23 +104,45 @@ hgroup
 		font-size: 33px
 		line-height: 40px
 		letter-spacing: 0.82px
-	.slashes
-		width: 200px
-		margin: -457px 0 0 -1260px
-		font-size: 25px
-		letter-spacing: 23px
-		line-height: 58px
-		opacity: .1
+
+.slashes
+	margin: -457px 0 0 -1310px
+	font-size: 25px
+	letter-spacing: 23px
+	line-height: 58px
+	opacity: .1
 
 .skills
 	margin-top: 125px
 
 h3
-	text-transform: uppercase
 	transform: rotate(90deg)
 	font-size: 24px
+	width: 100%
 	margin: 224px 592px
 	letter-spacing: 2px
+	text-transform: uppercase
 
+#portfolio-block
+	ul
+		margin-top: -46px
+		li a
+			font-family: "Futura PT"
+			font-size: 33px
+			line-height: 123px
+			text-transform: uppercase
+			letter-spacing: 1.65px
+			color: #a2e22c
+	.slashes
+		@extend .slashes
+		margin: -345px 0 0 -565px
+
+#order-block
+	h3
+		@extend h3
+		margin: 172px 608px
+	.slashes
+		@extend .slashes
+		margin: -275px 0 0 -140px
 
 @import "media" // Always at the end
