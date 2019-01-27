@@ -29,13 +29,11 @@ body
 		padding-left: 0
 		list-style-type: none
 
-header
-	height: 100px
-	ul
-		margin-top: 30px
+header ul
+	margin-top: 30px
 	a
 		text-transform: uppercase
-		font-size: 18px
+		font-size: 14px
 		color: $text
 		margin-right: 63px
 		letter-spacing: 2px
@@ -46,13 +44,12 @@ header
 		opacity: 1
 
 hgroup
-	margin-top: 230px
+	margin-top: 245px
 	h1
 		font-family: "Futura PT"
 		font-size: 80px
 		text-indent: -8px
-		letter-spacing: 1px
-		font-weight: 500
+		letter-spacing: -1px
 	h2
 		margin-top: -28px
 		font-size: 33px
@@ -62,11 +59,14 @@ section#main
 	img
 		position: absolute
 		z-index: -10
-	.arrows
-		top: 135px
-		right: -62px
+	.arrowLeft, .arrowRight
+		top: 205px
+	.arrowLeft
+		right: 438px
+	.arrowRight
+		right: -27px
 	.photo
-		top: -70px
+		top: -55px
 		right: 25px
 		z-index: -1
 
@@ -75,7 +75,6 @@ section#about
 	margin-top: 297px
 	padding: 65px 20px 0 65px
 	background: url('../img/main/bg-block.jpg') repeat-y top
-	box-shadow: 5px 5px 20px black
 	h4
 		width: 100%
 		color: #a2e22c
@@ -90,19 +89,19 @@ section#about
 		letter-spacing: 0.82px
 
 .slashes
-	margin: -460px 0 0 -1320px
+	margin: -457px 0 0 -1310px
 	letter-spacing: 23px
 	line-height: 58px
 	opacity: .1
 
 section#skills
-	margin-top: 115px
+	margin-top: 125px
 	picture:last-child
 		margin-top: -10px
 
 h3
 	transform: rotate(90deg)
-	margin: 155px 660px
+	margin: 145px 660px
 	font-size: 1em
 	letter-spacing: 2px
 	text-transform: uppercase
@@ -124,17 +123,15 @@ section#portfolio
 section#order
 	h3
 		@extend h3
-		margin: 100px 660px
+		margin: 106px 660px
 	.slashes
 		@extend .slashes
 		margin: -145px 0 0 -150px
 	form
 		height: 600px
-		width: 920px
+		width: 785px
 		margin: -75px auto
-		padding: 0 70px
 		background: url('../img/main/bg-block.jpg') repeat-y top
-		box-shadow: 5px 5px 20px black
 		input:not([type="submit"])
 			height: 120px
 			width: 780px
@@ -163,10 +160,10 @@ section#order
 			text-decoration: underline
 
 footer
-	padding-top: 168px
+	padding-top: 160px
 	letter-spacing: 0.6px
 	ul
-		width: 180px
+		width: 157px
 		margin-top: -5px
 		img
 			transition: all .2s ease
