@@ -102,7 +102,7 @@ gulp.task('dest', function () {
     ]).pipe(gulp.dest('docs/css'));
     let fontsDist = gulp.src('app/fonts/**/*').pipe(gulp.dest('docs/fonts'));
     let jsDist = gulp.src(['app/js/**/*', '!app/js/scripts.js']).pipe(gulp.dest('docs/js'));
-    let htmlDist = gulp.src(['app/*.html', '!app/template.html']).pipe(gulp.dest('docs'));
+    let htmlDist = gulp.src(['app/*.html', 'app/*.php']).pipe(gulp.dest('docs'));
     let htaccessDist = gulp.src(['app/.htaccess']).pipe(gulp.dest('docs'));
     let imgDist = gulp.src('app/img/**/*')
         .pipe(cache(imagemin({
