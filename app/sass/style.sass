@@ -2,9 +2,6 @@
 @import "fonts"
 @import "libs"
 
-::placeholder
-	color: #666
-
 ::selection
 	background-color: $accent
 	color: #fff
@@ -125,6 +122,7 @@ section#portfolio
 		margin: -185px 0 0 -150px
 
 section#order
+	height: 960px
 	h3
 		@extend h3
 		margin: 100px 660px
@@ -134,13 +132,12 @@ section#order
 	form
 		height: 600px
 		margin: -75px 110px
-		padding: 0 70px
 		color: $accent
 		background: url('../img/main/bg-block.jpg') repeat-y top
 		box-shadow: 5px 5px 20px black
 		input:not([type="submit"])
 			height: 120px
-			width: 780px
+			width: 790px
 			padding-top: 55px
 			font-size: 32px
 			background-color: transparent
@@ -149,10 +146,12 @@ section#order
 			border-bottom: 1px solid grey
 			opacity: .5
 		input::placeholder
+			font-size: 24px
+			color: white
 		input.error
 			border: 1px solid #ff0000
-		input#submit
-			padding: 30px 5px
+		input[type="submit"]
+			padding: 30px 75px
 			color: #a2e22c
 			font-family: "Futura PT"
 			font-size: 33px
@@ -160,7 +159,7 @@ section#order
 			text-transform: uppercase
 			background-color: transparent
 			border: 0
-		input#submit:hover
+		input[type="submit"]:hover
 			text-decoration: underline
 		h2
 			margin-top: 250px
