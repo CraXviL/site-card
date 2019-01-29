@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
-  const HEIGHT1 = parseInt($('#main').css('height'), 10);
-  const HEIGHT2 = parseInt($('#about').css('height'), 10);
+  const HEIGHT1 = parseInt($('#main').css('height'), 10) + parseInt($('header').css('height'), 10);
+  const HEIGHT2 = parseInt($('#about').css('height'), 10) + parseInt($('#skills').css('height'), 10);
   const HEIGHT3 = parseInt($('#portfolio').css('height'), 10);
 
 	console.log(HEIGHT1, HEIGHT2, HEIGHT3);
@@ -11,11 +11,11 @@ $(document).ready(() => {
     window.location = '#about';
   });
   $('#menu-portfolio').click(() => {
-    $('html').animate({ scrollTop: HEIGHT1 + HEIGHT2 + 300});
+    $('html').animate({ scrollTop: HEIGHT1 + HEIGHT2});
     window.location = '#portfolio';
   });
   $('#menu-contacts').click(() => {
-    $('html').animate({ scrollTop: HEIGHT1 + HEIGHT2 + HEIGHT3  + 300});
+    $('html').animate({ scrollTop: HEIGHT1 + HEIGHT2 + HEIGHT3});
     window.location = '#order';
   });
 
