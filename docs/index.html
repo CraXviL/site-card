@@ -7,7 +7,7 @@
 	<title>Andrey Strebkov - Web Developer</title>
 	<meta name="description" content="Andrey Strebkov - Web Developer">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=.4, maximum-scale=1">
 	<meta name="keywords" content="Web Developer">
 	<meta name="robots" content="index, follow">
 	<meta name="author" content="Andrey Strebkov">
@@ -30,107 +30,121 @@
 
 <body>
 
-	<div class="container">
+	<div class="container p-0">
 		<header class="row">
-			<ul class="d-md-inline-flex">
+			<ul class="d-md-inline-flex col">
           <li><a id="menu-about" href="#">обо мне</a></li>
           <li><a id="menu-portfolio" href="#">портфолио</a></li>
           <li><a id="menu-contacts" href="#">контакты</a></li>
 			</ul>	
     </header>
-    <section id="main" class="row">
-      <hgroup>
-        <h1>ВЕБ-РАЗРАБОТЧИК</h1>
-        <h2>СТРЕБКОВ АНДРЕЙ</h2>
+    <section class="row" id="main">
+      <hgroup class="col-lg-10 col-md-12 mx-md-5 mx-lg-0">
+        <h1>Веб-разработчик</h1>
+        <h2>Стребков Андрей</h2>
       </hgroup>
-      <div class="col">
-        <img class="photo" src="img/main/photo.png" alt="photo">
-        <img class="arrows" src="img/main/arrows.png" alt="arrows">
+      <div class="col-lg-2 col-md-12">
+        <img src="img/main/photo.png" alt="photo.png" id="photo">
+        <img src="img/main/arrows.png" alt="arrows.png" id="arrows">
       </div>
     </section>
-    <section id="about" class="row justify-content-center">
-      <h4>привет.</h4>
-      <p>Мое имя Андрей. Я - веб-разработчик. У меня Вы можете заказать красивый и функциональный сайт, который будет хорошо смотреться <br>на любом устройстве и в любом браузере. Я хорошо знаю как чистый JavaScript так и фреймворки JQuery и Vue.js, что позволяет мне использовать сложную логику на сделанных мной сайтах. Без труда использую в работе различные готовые решения и компоненты. Для того, чтобы автоматизировать рутинные операции и ускорить работу над проектом я применяю современные инструменты веб-разработчика: git, gulp, webpack, babel, npm и другие. С примерами моих работ можете ознакомиться ниже на этой странице. </p>
-      <div class="slashes">////<br>////<br>////<br>////<br>////<br>////<br>////</div>
+    <section class="row">
+      <div class="slashes slashes--about">////<br>////<br>////<br>////<br>////<br>////<br>////</div>
+      <div class="col" id="about">
+        <h4>привет.</h4>
+        <p>Мое имя Андрей. Я - веб-разработчик. <br> У меня Вы можете заказать красивый и функциональный сайт, который будет хорошо смотреться на любом устройстве и в любом браузере. Я хорошо знаю как чистый JavaScript так и фреймворки JQuery и Vue.js, что позволяет мне использовать сложную логику на сделанных мной сайтах. Без труда использую в работе различные готовые решения и компоненты. Для того, чтобы автоматизировать рутинные операции и ускорить работу над проектом я применяю современные инструменты веб-разработчика: git, gulp, webpack, babel, npm и другие. С примерами моих работ можете ознакомиться ниже на этой странице.</p>
+      </div>
     </section>
-    <div id="skills" class="row justify-content-between">
-      <picture>
-        <source srcset="img/svg/html5.svg">
-        <img src="img/main/html5.png" alt="html5">
-      </picture>
-      <picture>
-        <source srcset="img/svg/css3.svg">
-        <img src="img/main/css3.png" alt="css3">
-      </picture>
-      <picture>
-        <source srcset="img/svg/javascript.svg">
-        <img src="img/main/javascript.png" alt="javascript">
-      </picture>
-      <picture>
-        <source srcset="img/svg/sass.svg">
-        <img src="img/main/sass.png" alt="sass">
-      </picture>
-      <picture>
-        <source srcset="img/svg/bootstrap.svg">
-        <img src="img/main/bootstrap.png" alt="bootstrap">
-      </picture>
-      <picture>
-        <source srcset="img/svg/git.svg">
-        <img src="img/main/git.png" alt="git">
-      </picture>
-      <picture>
-        <source srcset="img/svg/vue.svg">
-        <img src="img/main/vue.png" alt="vue">
-      </picture>
-      <picture>
-        <source srcset="img/svg/webpack.svg">
-        <img src="img/main/webpack.png" alt="webpack">
-      </picture>
+    <div class="row justify-content-between" id="skills">
+      <div class="col-lg-6 d-flex justify-content-between">
+        <picture>
+          <source srcset="img/svg/html5.svg">
+          <img src="img/main/html5.png" alt="html5">
+        </picture>
+        <picture>
+          <source srcset="img/svg/css3.svg">
+          <img src="img/main/css3.png" alt="css3">
+        </picture>
+        <picture>
+          <source srcset="img/svg/javascript.svg">
+          <img src="img/main/javascript.png" alt="javascript">
+        </picture>
+        <picture>
+          <source srcset="img/svg/sass.svg">
+          <img src="img/main/sass.png" alt="sass">
+        </picture>
+      </div>
+      <div class="col-lg-6 d-flex justify-content-between">
+        <picture>
+          <source srcset="img/svg/bootstrap.svg">
+          <img src="img/main/bootstrap.png" alt="bootstrap">
+        </picture>
+        <picture>
+          <source srcset="img/svg/git.svg">
+          <img src="img/main/git.png" alt="git">
+        </picture>
+        <picture>
+          <source srcset="img/svg/vue.svg">
+          <img src="img/main/vue.png" alt="vue">
+        </picture>
+        <picture>
+          <source srcset="img/svg/webpack.svg">
+          <img src="img/main/webpack.png" alt="webpack">
+        </picture>
+      </div>
     </div>
-    <section id="portfolio" class="row">
-      <div class="col">
+    <section class="row" id="portfolio">
+      <div class="col-12">
         <h3>портфолио</h3>
         <div class="slashes">/////////////////<br>/////////////////<br>/////////////////<br>/////////////////</div>
       </div>
-      <ul>
+      <ul class="col-12 mx-md-5 mx-lg-0">
         <li><a href="http://geometriadizaina.ru">geometriadizaina.ru</a></li>
         <li><a href="https://prazdnikmne.ru">prazdnikmne.ru</a></li>
         <li><a href="#order">вашклассныйсайт.ru</a></li>
       </ul>
     </section>
     <section id="order" class="row">
-      <div class="col">
+      <div class="col-12">
         <h3>контакты</h3>
         <div class="slashes">/////////////////<br>/////////////////<br>/////////////////<br>/////////////////<br>////<br>////<br>////</div>
       </div>
-      <form name="order" class="text-center">
-        <input type="text" name="name" size="40" placeholder="Имя">
-        <input type="tel" name="phone" size="40" placeholder="Телефон">
-        <input type="email" name="email" size="40" placeholder="Почта">
-        <input type="text" name="message" size="40" placeholder="Сообщение">
-        <input id="submit" type="submit" name="send" value="Отправить">
-      </form>
+      <div class="col-12">
+        <form name="order" class="text-center mx-auto">
+          <input type="text" name="name" size="40" placeholder="Имя">
+          <input type="tel" name="phone" size="40" placeholder="Телефон">
+          <input type="email" name="email" size="40" placeholder="Почта">
+          <input type="text" name="message" size="40" placeholder="Сообщение">
+          <input type="submit" name="send" class="text-right col" value="Отправить">
+        </form>
+      </div>
     </section>
     <footer class="row justify-content-between">
-      <p>© А. П. Стребков, 2018</p>
-      <ul class="d-md-inline-flex justify-content-between">
-        <li>
-          <a href="#">
-            <img src="img/main/vk.png" alt="vk">
-          </a>
-        <li>
-          <a href="#">
-            <img src="img/main/facebook.png" alt="facebook">
-          </a>
-        <li>
-          <a href="#">
-            <img src="img/main/instagram.png" alt="instagram">
-          </a>
-        <li>
-          <a href="#">
-            <img src="img/main/github.png" alt="github">
-          </a>
-      </ul>
+      <div class="col d-flex justify-content-between mx-md-5 mx-lg-0">
+        <p>© А. П. Стребков, 2018</p>
+        <ul class="d-md-inline-flex justify-content-between">
+          <li>
+            <a href="https://vk.com/andreystrebkov">
+              <img src="img/main/vk.png" alt="vk">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/apstrebkov">
+              <img src="img/main/facebook.png" alt="facebook">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/streb_ander">
+              <img src="img/main/instagram.png" alt="instagram">
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/CraXviL">
+              <img src="img/main/github.png" alt="github">
+            </a>
+          </li>
+        </ul>
+      </div>
     </footer>
 
 	</div>

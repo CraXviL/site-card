@@ -2,13 +2,97 @@
 
 
 /*==========  Desktop First  ==========*/
-
++media-breakpoint-down(xl)
+	body
+		background: url('../img/main/bg.jpg') repeat-y top
+	
 // ≥1200px
 +media-breakpoint-down(lg)
+	body
+		background: url('../img/main/bg-1920.jpg') repeat-y top
 
 // ≥992px
 +media-breakpoint-down(md)
 
+	body
+		background: url('../img/main/bg-990.jpg') repeat-y top
+
+	.container
+		padding: 0 2%
+
+	header
+		ul
+			margin: 25px 55px
+		a
+			margin-right: 58px	
+
+	hgroup
+		margin-top: 248px
+		h1
+			font-size: 2.625em
+			letter-spacing: .02em
+			text-indent: 0
+		h2
+			margin-top: -19px
+
+	section#main
+		img#arrows
+			right: 0
+			transform: scale(.9)
+		img#photo
+			right: 100px
+
+	div#about
+		margin-top: 515px
+		padding: 76px 80px 85px 50px
+
+	.slashes--about
+		@include invisible(hidden)
+
+	div#skills
+		margin-top: 90px
+		div:first-child
+			padding: 0 85px 0 43px
+			picture
+				margin-left: 30px
+			picture:last-child
+				margin-left: 0
+		div:last-child
+			padding: 90px 100px 0 60px
+			picture
+				margin-left: 10px
+			picture:last-child
+				margin-left: 0
+
+	h3
+		margin: 180px 480px
+
+	section#portfolio
+		.slashes
+			margin: -220px 0 0 -190px
+		ul
+	    margin-top: 113px
+	    li a
+	    	line-height: 150px
+
+	section#order
+		height: 1360px
+		.slashes
+	    margin: -210px 0 0 -195px
+
+  form
+  	height: 720px
+  	width: 100%
+  	margin-top: -175px
+  	input:not([type="submit"])
+  		height: 144px
+  		padding-top: 75px
+  	input[type="submit"]
+	    padding: 40px 70px
+
+	footer ul
+			width: 197px
+			margin: -15px 23px
 // ≥768px
 +media-breakpoint-down(sm)
 

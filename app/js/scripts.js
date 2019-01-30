@@ -4,18 +4,18 @@ $(document).ready(() => {
   const HEIGHT2 = parseInt($('#about').css('height'), 10) + parseInt($('#skills').css('height'), 10);
   const HEIGHT3 = parseInt($('#portfolio').css('height'), 10);
 
-	console.log(HEIGHT1, HEIGHT2, HEIGHT3);
+	// console.log(HEIGHT1, HEIGHT2, HEIGHT3);
 
   $('#menu-about').click(() => {
     $('html').animate({ scrollTop: HEIGHT1 });
     window.location = '#about';
   });
   $('#menu-portfolio').click(() => {
-    $('html').animate({ scrollTop: HEIGHT1 + HEIGHT2});
+    $('html').animate({ scrollTop: HEIGHT1 + HEIGHT2 + 500});
     window.location = '#portfolio';
   });
   $('#menu-contacts').click(() => {
-    $('html').animate({ scrollTop: HEIGHT1 + HEIGHT2 + HEIGHT3});
+    $('html').animate({ scrollTop: HEIGHT1 + HEIGHT2 + HEIGHT3 + 500});
     window.location = '#order';
   });
 
@@ -52,7 +52,7 @@ $(document).ready(() => {
     });
     $('form').fadeOut();
     window.setTimeout(() => {
-	    $('form').html('<h2>Заявка отправлена</h2><p>Мы с Вами обязательно свяжемся</p>');
+	    $('form').html('<h2>Заявка отправлена</h2><p>Я с Вами обязательно свяжусь</p>');
 	    $('form').fadeIn();
 	  }, 500);
   });
