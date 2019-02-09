@@ -3,31 +3,52 @@
 
 /*==========  Desktop First  ==========*/
 +media-breakpoint-down(xl)
-	body
-		background: url('../img/main/bg.jpg') repeat-y top
 	
 // ≥1200px
 +media-breakpoint-down(lg)
 	body
-		background: url('../img/main/bg-1920.jpg') repeat-y top
+		background: url('../img/main/bg-1200.jpg') repeat-y top
 
+	.line
+		height: 3900px
+		&:nth-child(2)
+			left: 492px
+		&:nth-child(3)
+			left: 775px
+
+	h3
+		margin: 160px 495px
+
+	.slashes--about
+		display: none
+
+	.slashes
+		margin: -195px 0 0 -215px
 // ≥992px
 +media-breakpoint-down(md)
-
 	body
 		background: url('../img/main/bg-990.jpg') repeat-y top
 
+	.line
+		height: 4850px
+		&:nth-child(1)
+			left: 220px
+		&:nth-child(2)
+			left: 475px
+		&:nth-child(3)
+			left: 975px
+
 	.container
-		padding: 0 2%
+		padding-left: 15px !important
 
 	header
 		ul
-			margin: 25px 50px
+			margin: 30px 50px
 		a
 			margin-right: 58px	
 
 	hgroup
-		margin-top: 248px
+		margin-top: 255px
 		h1
 			font-size: 2.625em
 			letter-spacing: .02em
@@ -37,14 +58,14 @@
 
 	section#main
 		img#arrows
-			right: 0
+			right: -18px
 			transform: scale(.9)
 		img#photo
 			right: 100px
 
 	div#about
 		margin-top: 515px
-		padding: 76px 80px 85px 50px
+		padding: 75px 70px 85px 70px
 
 	.slashes--about
 		display: none
@@ -52,32 +73,32 @@
 	div#skills
 		margin-top: 90px
 		div:first-child
-			padding: 0 85px 0 43px
+			padding: 0 75px 0 40px
 			picture
 				margin-left: 30px
 			picture:last-child
 				margin-left: 0
 		div:last-child
-			padding: 90px 100px 0 60px
+			padding: 90px 90px 0 55px
 			picture
 				margin-left: 10px
 			picture:last-child
 				margin-left: 0
 
 	h3
-		margin: 180px 480px
+		margin: 184px 478px
 
 	.slashes
-		margin: -220px 0 0 -240px
+		margin: -220px 0 0 -245px
 
 	section#portfolio
 		ul
-	    margin-top: 120px
+	    margin-top: 112px
 	    li a
 	    	line-height: 150px
 
 	section#order
-		height: 1360px
+		height: 1355px
 
   form
   	height: 720px
@@ -85,13 +106,13 @@
   	margin-top: -175px
   	input:not([type="submit"])
   		height: 144px
-  		padding-top: 75px
+  		padding-top: 80px
   	input[type="submit"]
-	    padding: 40px 70px
+	    padding: 40px 60px
 
 	footer ul
-			width: 197px
-			margin: -10px 23px
+			width: 195px
+			margin: -10px 15px
 // ≥768px
 +media-breakpoint-down(sm)
 
