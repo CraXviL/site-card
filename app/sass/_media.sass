@@ -1,11 +1,12 @@
 @import "vars"
 
 
-/*==========  Desktop First  ==========*/
+/*==========	Desktop First	==========*/
 +media-breakpoint-down(xl)
 	
 // ≥1200px
 +media-breakpoint-down(lg)
+
 	body
 		background: url('../img/main/bg-1200.jpg') repeat-y top
 
@@ -26,6 +27,7 @@
 		margin: -195px 0 0 -215px
 // ≥992px
 +media-breakpoint-down(md)
+
 	body
 		background: url('../img/main/bg-990.jpg') repeat-y top
 
@@ -67,9 +69,6 @@
 		margin-top: 515px
 		padding: 75px 70px 85px 70px
 
-	.slashes--about
-		display: none
-
 	div#skills
 		margin-top: 90px
 		div:first-child
@@ -93,22 +92,22 @@
 
 	section#portfolio
 		ul
-	    margin-top: 112px
-	    li a
-	    	line-height: 150px
+			margin-top: 112px
+			li a
+				line-height: 150px
 
 	section#order
 		height: 1355px
 
-  form
-  	height: 720px
-  	width: 100%
-  	margin-top: -175px
-  	input:not([type="submit"])
-  		height: 144px
-  		padding-top: 80px
-  	input[type="submit"]
-	    padding: 40px 60px
+	form
+		height: 720px
+		width: 100%
+		margin-top: -175px
+		input:not([type="submit"])
+			height: 144px
+			padding-top: 80px
+		input[type="submit"]
+			padding: 40px 60px
 
 	footer ul
 			width: 195px
@@ -116,11 +115,52 @@
 // ≥768px
 +media-breakpoint-down(sm)
 
+	body
+		background: url('../img/main/bg-990.jpg') repeat-y top
+
+	.line
+		height: 4850px
+		&:nth-child(1)
+			left: 155px
+		&:nth-child(2)
+			left: 380px
+
+	.container
+		padding-left: 0 !important
+
+	hgroup
+		h1
+			font-size: 56px
+
+		h2
+			font-size: 30px
+
+	section#main
+		img#arrows
+			right: -102px
+			transform: scale(.8)
+		img#photo
+			right: 5px
+
+	div#about
+		margin-top: 515px
+		padding: 75px 70px 85px 70px
+		p
+			font-size: 24px
+
+	div#skills picture
+		margin-left: 0 !important
+
+	h3
+		margin: 184px 383px
+
+	.slashes
+		margin: -220px 0 0 -335px
 // ≥576px
 +media-breakpoint-down(xs)
 
 
-/*==========  Mobile First  ==========*/
+/*==========	Mobile First	==========*/
 
 // ≤576px
 +media-breakpoint-up(sm)

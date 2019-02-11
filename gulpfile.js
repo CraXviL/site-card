@@ -4,7 +4,7 @@ let gulp          = require('gulp'),
 		gutil         = require('gulp-util' ),
 		sass          = require('gulp-sass'),
 		babel         = require('gulp-babel');
-    	sourcemaps    = require('gulp-sourcemaps');
+		sourcemaps    = require('gulp-sourcemaps');
 		browserSync   = require('browser-sync'),
 		concat        = require('gulp-concat'),
 		uglify        = require('gulp-uglify'),
@@ -12,10 +12,10 @@ let gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify'),
-		del          = require('del'), // Подключаем библиотеку для удаления файлов и папок
-	    imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
-	    pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
-	    cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
+		del          = require('del'),
+		imagemin     = require('gulp-imagemin'),
+		pngquant     = require('imagemin-pngquant'),
+		cache        = require('gulp-cache'),
 		rsync         = require('gulp-rsync');
 
 gulp.task('browser-sync', function() {
@@ -43,7 +43,9 @@ gulp.task('styles', function() {
 gulp.task('libs', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/popover/popover.js'
+		'app/libs/popover/popover.js',
+		'app/libs/bootstrap4/js/dist/util.js',
+		'app/libs/bootstrap4/js/dist/collapse.js'
 		])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())
