@@ -11,11 +11,12 @@
 		background: url('../img/main/bg-1200.jpg') repeat-y top
 
 	.line
-		height: 3900px
+		height: 3850px
 		&:nth-child(2)
 			left: 492px
 		&:nth-child(3)
 			left: 775px
+
 
 	h3
 		margin: 160px 495px
@@ -49,25 +50,24 @@
 		a
 			margin-right: 58px	
 
-	hgroup
-		margin-top: 255px
-		h1
-			font-size: 2.625em
-			letter-spacing: .02em
-			text-indent: 0
-		h2
-			margin-top: -19px
-
 	section#main
+		height: 935px
+		hgroup
+			margin-top: 280px
+			h1
+				font-size: 2.625em
+				letter-spacing: .02em
+				text-indent: 0
 		img#arrows
+			bottom: 85px
 			right: -18px
 			transform: scale(.9)
 		img#photo
+			bottom: -185px
 			right: 100px
 
 	div#about
-		margin-top: 515px
-		padding: 75px 70px 85px 70px
+		padding: 85px 65px 85px 65px
 
 	div#skills
 		margin-top: 90px
@@ -85,12 +85,14 @@
 				margin-left: 0
 
 	h3
-		margin: 184px 478px
+		margin: 0 480px
 
 	.slashes
-		margin: -220px 0 0 -245px
+		margin: -30px 0 0 -245px
 
 	section#portfolio
+		h3
+			margin-top: 187px
 		ul
 			margin-top: 112px
 			li a
@@ -98,20 +100,24 @@
 
 	section#order
 		height: 1355px
+		h3
+			margin-top: 190px
 
-	form
-		height: 720px
-		width: 100%
-		margin-top: -175px
-		input:not([type="submit"])
-			height: 144px
-			padding-top: 80px
-		input[type="submit"]
-			padding: 40px 60px
+	section#order
+		form
+			height: 720px
+			width: 100%
+			margin-top: -175px
+			input:not([type="submit"])
+				height: 144px
+				padding-top: 80px
+			input[type="submit"]
+				padding: 40px 60px
 
 	footer ul
 			width: 195px
 			margin: -10px 15px
+
 // ≥768px
 +media-breakpoint-down(sm)
 
@@ -119,23 +125,16 @@
 		background: url('../img/main/bg-990.jpg') repeat-y top
 
 	.line
-		height: 4850px
-		&:nth-child(1)
-			left: 155px
-		&:nth-child(2)
-			left: 380px
-
-	.container
-		padding-left: 0 !important
-
-	hgroup
-		h1
-			font-size: 56px
-
-		h2
-			font-size: 30px
+		height: 4800px
 
 	section#main
+		height: 800px
+		hgroup
+			margin-top: 180px
+			h1
+				font-size: 56px
+			h2
+				font-size: 30px
 		img#arrows
 			right: -102px
 			transform: scale(.8)
@@ -143,7 +142,6 @@
 			right: 5px
 
 	div#about
-		margin-top: 515px
 		padding: 75px 70px 85px 70px
 		p
 			font-size: 24px
@@ -152,24 +150,95 @@
 		margin-left: 0 !important
 
 	h3
-		margin: 184px 383px
+		margin: 184px 479px
 
 	.slashes
 		margin: -220px 0 0 -335px
+
 // ≥576px
 +media-breakpoint-down(xs)
 
+	body
+		background: url('../img/main/bg-540.jpg') repeat-y top
 
-/*==========	Mobile First	==========*/
+	.line
+		height: 4850px
 
-// ≤576px
-+media-breakpoint-up(sm)
+	.container
+		padding-left: 15px !important
 
-// ≤768px
-+media-breakpoint-up(md)
+	header
+		ul
+			margin: 30px 50px
+		a
+			margin-right: 58px
 
-// ≤992px
-+media-breakpoint-up(lg)
+	section#main
+		height: 935px
+		hgroup
+			margin-top: 280px
+			h1
+				font-size: 2.625em
+				letter-spacing: .02em
+				text-indent: 0
 
-// ≤1200px
-+media-breakpoint-up(xl)
+	section#main
+		img#arrows
+			bottom: 85px
+			right: -18px
+			transform: scale(.9)
+		img#photo
+			bottom: -185px
+			right: 100px
+
+	div#about
+		padding: 85px 65px 85px 65px
+
+	div#skills
+		margin-top: 90px
+		div:first-child
+			padding: 0 75px 0 40px
+			picture
+				margin-left: 30px
+			picture:last-child
+				margin-left: 0
+		div:last-child
+			padding: 90px 90px 0 55px
+			picture
+				margin-left: 10px
+			picture:last-child
+				margin-left: 0
+
+	h3
+		margin: 0 480px
+
+	.slashes
+		margin: -30px 0 0 -245px
+
+	section#portfolio
+		h3
+			margin-top: 187px
+		ul
+			margin-top: 112px
+			li a
+				line-height: 150px
+
+	section#order
+		height: 1355px
+		h3
+			margin-top: 190px
+
+	section#order
+		form
+			height: 720px
+			width: 100%
+			margin-top: -175px
+			input:not([type="submit"])
+				height: 144px
+				padding-top: 80px
+			input[type="submit"]
+				padding: 40px 60px
+
+	footer ul
+			width: 195px
+			margin: -10px 15px

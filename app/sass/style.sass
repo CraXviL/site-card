@@ -6,16 +6,6 @@
 	background-color: $accent
 	color: #fff
 
-.line
-	height: 3800px
-	left: 180px
-	opacity: .1
-	z-index: -1
-	&:nth-child(2)
-		left: 672px
-	&:nth-child(3)
-		left: 955px
-
 body
 	font-size: 24px
 	min-width: 320px
@@ -27,19 +17,25 @@ body
 	color: $text
 	transition: all .2s ease
 	background: url('../img/main/bg.jpg') repeat-y top
-	input, textarea
-		border: #666 1px solid
-		outline: none
-		&:focus:required:invalid
-			border-color: red
-		&:required:valid
-			border-color: green
-	ul
-		padding-left: 0
-		list-style-type: none
+
+.line
+	height: 3750px
+	left: 180px
+	opacity: .1
+	z-index: -1
+	&:nth-child(2)
+		left: 672px
+	&:nth-child(3)
+		left: 955px
+
+ul
+	padding-left: 0
+	list-style-type: none
 
 header
 	height: 100px
+	nav
+		width: 85%
 	ul
 		margin-top: 30px
 	a
@@ -53,57 +49,58 @@ header
 		text-decoration: none
 		color: $text
 		opacity: 1
-
-hgroup
-	margin-top: 228px
-	text-transform: uppercase
-h1
-	font-family: "Futura PT"
-	font-size: 3.33em
-	letter-spacing: .01em
-	text-indent: -5px
-	font-weight: 500
-h2
-	margin-top: -28px
-	font-size: 33px
-	font-weight: 300
-	letter-spacing: .05em
+	.navbar-toggler-icon
+		background-image: url('../img/main/menu.png')
 
 section#main
+	height: 717px
+	hgroup
+		margin-top: 255px
+		text-transform: uppercase
+	h1
+		font-family: "Futura PT"
+		font-size: 3.33em
+		letter-spacing: .01em
+		text-indent: -5px
+		font-weight: 500
+	h2
+		font-size: 33px
+		font-weight: 300
+		letter-spacing: .05em
 	img
 		position: absolute
 		z-index: -10
 	img#arrows
-		top: 135px
+		bottom: 185px
 		right: -47px
 	img#photo
-		top: -80px
+		bottom: -70px
 		right: 55px
 		z-index: -1
 
 div#about
-	margin: 297px 15px 0 -5px
-	padding: 65px 90px 65px 62px
+	padding: 65px 80px 65px 56px
 	background: url('../img/main/bg-block.jpg') repeat-y top
 	box-shadow: 5px 5px 20px black
 	h4
-		width: 100%
 		color: #a2e22c
 		font-family: "Futura PT"
 		font-size: 33px
-		letter-spacing: .7px
+		letter-spacing: 1px
 		text-transform: uppercase
 	p
-		margin-top: 30px
+		margin-top: 35px
 		font-size: 33px
 		line-height: 40px
 		letter-spacing: 0.82px
 
 .slashes
-	margin: 435px 0 0 -125px
 	letter-spacing: 23px
 	line-height: 58px
 	opacity: .2
+
+.slashes--about
+	margin: 130px 0 0 -125px
 
 div#skills
 	margin-top: 115px
@@ -115,8 +112,8 @@ div#skills
 		margin-top: -10px
 
 h3
+	margin: 0 675px
 	transform: rotate(90deg)
-	margin: 160px 675px
 	font-size: 24px
 	letter-spacing: 2px
 	text-transform: uppercase
@@ -131,18 +128,20 @@ section#portfolio
 			text-transform: uppercase
 			letter-spacing: 1.65px
 			color: #a2e22c
+	h3
+		margin-top: 168px
 	.slashes
 		@extend .slashes
-		margin: -195px 0 0 -135px
+		margin: -35px 0 0 -135px
 
 section#order
 	height: 1120px
 	h3
 		@extend h3
-		margin: 98px 675px
+		margin-top: 105px
 	.slashes
 		@extend .slashes
-		margin: -135px 0 0 -135px
+		margin: -25px 0 0 -135px
 	form
 		height: 600px
 		width: 81%
