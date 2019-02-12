@@ -163,7 +163,6 @@ section#order
 		height: 600px
 		width: 81%
 		margin-top: -160px
-		color: $accent
 		background: url('../img/main/bg-block.jpg') repeat-y top
 		box-shadow: 5px 5px 20px black
 		input:not([type="submit"])
@@ -171,20 +170,21 @@ section#order
 			width: 86%
 			padding-top: 60px
 			font-size: 32px
-			color: #a2e22c
+			color: $text
 			background-color: transparent
 			transition: all .5s ease
 			border: 0
 			border-bottom: 1px solid grey
-			opacity: .5
 		input::placeholder
 			font-size: 24px
-			color: white
+			opacity: .5
+		input:focus
+			border-bottom: 1px solid white
 		input.error
-			border-bottom: 1px solid #ff0000
+			color: #961717
 		input[type="submit"]
 			padding: 35px 75px
-			color: #a2e22c
+			color: $accent
 			font-family: "Futura PT"
 			font-size: 33px
 			letter-spacing: 1.65px
@@ -194,10 +194,9 @@ section#order
 		input[type="submit"]:hover
 			text-decoration: underline
 		h2
+			color: $accent
 			padding-top: 250px
 			font-family: "Futura PT"
-		p
-			color: white
 
 footer
 	height: 100px
