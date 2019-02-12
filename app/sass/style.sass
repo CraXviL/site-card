@@ -121,18 +121,35 @@ h3
 section#portfolio
 	ul
 		margin-top: 67px
-		li a
-			font-family: "Futura PT"
-			font-size: 33px
-			line-height: 125px
-			text-transform: uppercase
-			letter-spacing: 1.65px
-			color: #a2e22c
+	a
+		font-family: "Futura PT"
+		font-size: 33px
+		line-height: 125px
+		text-transform: uppercase
+		letter-spacing: 1.65px
+		color: #a2e22c
 	h3
 		margin-top: 168px
 	.slashes
 		@extend .slashes
 		margin: -35px 0 0 -135px
+	#portfolio-modal
+		height: 320px
+		width: 650px
+		margin: 450px
+		background: url('../img/main/bg-block.jpg') repeat-y top
+		box-shadow: 5px 5px 20px black
+		h2
+			margin: 0 75px
+			align-self: center
+			text-align: center
+		div
+			height: 160px
+			padding-top: 50px
+			text-align: center
+			a
+				margin: 0 40px
+				line-height: 25px
 
 section#order
 	height: 1120px
@@ -157,14 +174,14 @@ section#order
 			color: #a2e22c
 			background-color: transparent
 			transition: all .5s ease
-			border: 1px solid transparent
+			border: 0
 			border-bottom: 1px solid grey
 			opacity: .5
 		input::placeholder
 			font-size: 24px
 			color: white
 		input.error
-			border: 1px solid #ff0000
+			border-bottom: 1px solid #ff0000
 		input[type="submit"]
 			padding: 35px 75px
 			color: #a2e22c
@@ -177,7 +194,6 @@ section#order
 		input[type="submit"]:hover
 			text-decoration: underline
 		h2
-			@extend h2
 			padding-top: 250px
 			font-family: "Futura PT"
 		p

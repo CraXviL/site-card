@@ -1,7 +1,9 @@
 $(document).ready(() => {
 
-	const HEIGHT1 = parseInt($('#main').css('height'), 10) + parseInt($('header').css('height'), 10);
-	const HEIGHT2 = parseInt($('#about').css('height'), 10) + parseInt($('#skills').css('height'), 10);
+	const HEIGHT1 = parseInt($('#main').css('height'), 10) + 
+									parseInt($('header').css('height'), 10);
+	const HEIGHT2 = parseInt($('#about').css('height'), 10) + 
+									parseInt($('#skills').css('height'), 10);
 	const HEIGHT3 = parseInt($('#portfolio').css('height'), 10);
 
 	// console.log(HEIGHT1, HEIGHT2, HEIGHT3);
@@ -17,6 +19,32 @@ $(document).ready(() => {
 	$('#menu-contacts').click(() => {
 		$('html').animate({ scrollTop: HEIGHT1 + HEIGHT2 + HEIGHT3 + 500});
 		window.location = '#order';
+	});
+
+	$('#portfolio-modal').hide();
+	$('#portfolio ul a').on('click', (e) => {
+		e.preventDefault();
+		$('#portfolio-modal').show();
+		switch (e.target.id) {
+			case 'geometriadizaina':
+				$('#portfolio-modal h2').html('Лэндинг для дизайнеров интерьера "ГЕОМЕТРИЯ ДИЗАЙНА"');
+				$('#design').attr('href', 'https://yadi.sk/d/DLXXxglkN_Bjjw');
+				$('#code').attr('href', 'https://github.com/CraXviL/geometriadizaina.ru');
+				$('#webPage').attr('href', 'http://geometriadizaina.ru');
+				break;
+			case 'prazdnikmne':
+				$('#portfolio-modal h2').html('Многостраничный сайт "КОРПОРАЦИИ ПРАЗДНИКОВ АНАСТАСИИ БАЖЕНОВОЙ"');
+				$('#design').attr('href', 'https://yadi.sk/d/oo_e28SAj-_fTg');
+				$('#code').attr('href', 'https://github.com/CraXviL/prazdnikmne.ru');
+				$('#webPage').attr('href', 'https://prazdnikmne.ru');
+				break;
+			case 'plita':
+				$('#portfolio-modal h2').html('Лэндинг ресторана "PLITA"');
+				$('#design').attr('href', 'https://yadi.sk/d/jA22yCzpNXJ1Tg');
+				$('#code').attr('href', 'https://github.com/CraXviL/plita.ru');
+				$('#webPage').attr('href', 'http://plita.ru');
+				break;
+		}
 	});
 
 	$('input[name="name"]').on('input', (e) => {
