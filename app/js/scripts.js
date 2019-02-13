@@ -33,7 +33,7 @@ $(document).ready(() => {
 				$('#webPage').attr('href', 'http://geometriadizaina.ru');
 				break;
 			case 'prazdnikmne':
-				$('#portfolio-modal h2').html('Многостраничный сайт "КОРПОРАЦИИ ПРАЗДНИКОВ АНАСТАСИИ БАЖЕНОВОЙ"');
+				$('#portfolio-modal h2').html('Многостраничный сайт "КОРПОРАЦИЯ ПРАЗДНИКОВ АНАСТАСИИ БАЖЕНОВОЙ"');
 				$('#design').attr('href', 'https://yadi.sk/d/oo_e28SAj-_fTg');
 				$('#code').attr('href', 'https://github.com/CraXviL/prazdnikmne.ru');
 				$('#webPage').attr('href', 'https://prazdnikmne.ru');
