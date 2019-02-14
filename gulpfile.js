@@ -61,8 +61,8 @@ gulp.task('scripts', function() {
             ["env", { "modules": false }]
         ]
     }))
-    .pipe(sourcemaps.write('.'))
-	.pipe(uglify())
+    .pipe(sourcemaps.write('scripts.js'))
+	// .pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }));
 });

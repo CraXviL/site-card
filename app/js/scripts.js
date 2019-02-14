@@ -1,24 +1,43 @@
 $(document).ready(() => {
 
-	const HEIGHT1 = parseInt($('#main').css('height'), 10) + 
-									parseInt($('header').css('height'), 10);
-	const HEIGHT2 = parseInt($('#about').css('height'), 10) + 
-									parseInt($('#skills').css('height'), 10);
-	const HEIGHT3 = parseInt($('#portfolio').css('height'), 10);
+	var blockHeights = {
+		heightTopPart: 0,
+		heightMiddlePart: 0,
+		heightPortfolioBlock: 0,
+		calcBlockHeight() {
+			this.heightTopPart = parseInt($('header').css('height'), 10) +
+											parseInt($('#main').css('height'), 10);
+			this.heightMiddlePart = parseInt($('#about').css('height'), 10) +
+											parseInt($('#skills').css('height'), 10);
+			this.heightPortfolioBlock = parseInt($('#portfolio').css('height'), 10);
+		}
+	};
 
-	// console.log(HEIGHT1, HEIGHT2, HEIGHT3);
+	blockHeights.calcBlockHeight();
 
-	$('#menu-about').click(() => {
-		$('html').animate({ scrollTop: HEIGHT1 });
-		window.location = '#about';
-	});
-	$('#menu-portfolio').click(() => {
-		$('html').animate({ scrollTop: HEIGHT1 + HEIGHT2 + 500});
-		window.location = '#portfolio';
-	});
-	$('#menu-contacts').click(() => {
-		$('html').animate({ scrollTop: HEIGHT1 + HEIGHT2 + HEIGHT3 + 500});
-		window.location = '#order';
+	$(window).resize(() => blockHeights.calcBlockHeight());
+
+	$('.navbar-nav a').on('click', (e) => {
+		e.preventDefault();
+		switch (e.target.id) {
+			case 'menu-about':
+				$('html').animate({ scrollTop: blockHeights.heightTopPart });
+				window.location = '#about';
+			break;
+			case 'menu-portfolio':
+				$('html').animate({ scrollTop: blockHeights.heightTopPart +
+																				blockHeights.heightMiddlePart +
+																				200});
+				window.location = '#portfolio';
+			break;
+			case 'menu-contacts':
+				$('html').animate({ scrollTop: blockHeights.heightTopPart +
+																				blockHeights.heightMiddlePart +
+																				blockHeights.heightPortfolioBlock +
+																				200});
+				window.location = '#order';
+			break;
+		}
 	});
 
 	$('#portfolio-modal').hide();
@@ -41,8 +60,8 @@ $(document).ready(() => {
 			case 'plita':
 				$('#portfolio-modal h2').html('Лэндинг ресторана "PLITA"');
 				$('#design').attr('href', 'https://yadi.sk/d/jA22yCzpNXJ1Tg');
-				$('#code').attr('href', 'https://github.com/CraXviL/plita.ru');
-				$('#webPage').attr('href', 'http://plita.ru');
+				$('#code').attr('href', 'https://github.com/CraXviL/plita');
+				$('#webPage').attr('href', 'http://plita-restoran.ru');
 				break;
 		}
 	});
