@@ -40,10 +40,9 @@ $(document).ready(() => {
 		}
 	});
 
-	$('#portfolio-modal').hide();
 	$('#portfolio ul a').on('click', (e) => {
 		e.preventDefault();
-		$('#portfolio-modal').show();
+		$('#portfolio-modal').animate({right: '10%'});
 		switch (e.target.id) {
 			case 'geometriadizaina':
 				$('#portfolio-modal h2').html('Лэндинг для дизайнеров интерьера "ГЕОМЕТРИЯ ДИЗАЙНА"');
@@ -61,7 +60,7 @@ $(document).ready(() => {
 				$('#portfolio-modal h2').html('Лэндинг ресторана "PLITA"');
 				$('#design').attr('href', 'https://yadi.sk/d/jA22yCzpNXJ1Tg');
 				$('#code').attr('href', 'https://github.com/CraXviL/plita');
-				$('#webPage').attr('href', 'http://plita-restoran.ru');
+				$('#webPage').attr('href', 'https://craxvil.github.io/plita/');
 				break;
 		}
 	});
