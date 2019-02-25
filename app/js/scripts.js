@@ -42,7 +42,7 @@ $(document).ready(() => {
 
 	$('#portfolio ul a').on('click', (e) => {
 		e.preventDefault();
-		$('#portfolio-modal').animate({right: '10%'});
+		$('#portfolio-modal').show().animate({right: '10%'});
 		switch (e.target.id) {
 			case 'geometriadizaina':
 				$('#portfolio-modal h2').html('Лэндинг для дизайнеров интерьера "ГЕОМЕТРИЯ ДИЗАЙНА"');
