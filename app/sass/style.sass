@@ -51,7 +51,7 @@ header
 	.navbar-toggler
 		transform: scale(2)
 
-section#main
+section#block-main
 	height: 717px
 	hgroup
 		margin-top: 255px
@@ -77,7 +77,7 @@ section#main
 		right: 55px
 		z-index: -1
 
-div#about
+div#block-about
 	padding: 65px 80px 65px 56px
 	background: url('../img/main/bg-block.jpg') repeat-y top
 	box-shadow: 5px 5px 20px black
@@ -101,7 +101,7 @@ div#about
 .slashes--about
 	margin: 130px 0 0 -125px
 
-div#skills
+div#block-skills
 	margin-top: 115px
 	div:first-child
 		padding-right: 30px
@@ -117,7 +117,7 @@ h3
 	letter-spacing: 2px
 	text-transform: uppercase
 
-section#portfolio
+section#block-portfolio
 	ul
 		margin-top: 67px
 	a
@@ -127,6 +127,9 @@ section#portfolio
 		text-transform: uppercase
 		letter-spacing: 1.65px
 		color: #a2e22c
+		&:hover
+			cursor: pointer
+			text-decoration: underline
 	h3
 		margin-top: 168px
 	.slashes
@@ -152,7 +155,7 @@ section#portfolio
 				margin: 0 40px
 				line-height: 25px
 
-section#order
+section#block-order
 	height: 1120px
 	h3
 		@extend h3
