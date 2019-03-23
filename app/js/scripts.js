@@ -1,10 +1,13 @@
 $(document).ready(() => {
+	'use strict';
 
 	$('.navbar-nav a').on('click', (e) => {
 		e.preventDefault();
 		let target = e.target.getAttribute('href');
-		$('html, body').animate({ scrollTop: $(target).offset().top - ($(target).offset().top * 0.05) });
-		window.location = target;
+		let crtOffset = window.pageYOffset;
+		let trgOffset = $(target).offset().top;
+		let t = Math.abs(crtOffset - trgOffset)/5;
+		$('html, body').animate({ scrollTop: trgOffset-(trgOffset/20) }, t, 'linear');
 	});
 
 	$('#block-portfolio ul a').on('click', (e) => {
@@ -32,42 +35,77 @@ $(document).ready(() => {
 		}
 	});
 
-	$('input[name="name"]').on('input', (e) => {
-		validate(e, /^[ а-яё]+$/gi);
-	});
-	$('input[name="phone"]').on('input', (e) => {
-		validate(e, /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d- ]{7,10}$/);
-	});
-	$('input[name="email"]').on('input', (e) => {
-		validate(e, /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/);
-	});
+	/* form sending */
 
-	function validate(e, regExp) {
-		if (!regExp.test(e.target.value.trim())) {
-			$(e.target).addClass('error');
+	const inputsList = {
+		name: {
+			pattern: /^[ а-яё]{2,}$/gi,
+			valid: false
+		},
+		tel: {
+			pattern: /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d- ]{7,10}$/,
+			valid: false
+		},
+		email: {
+			pattern: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+			valid: false
+		}
+	};
+
+	(function() {
+		for (let elem in inputsList) {
+			$('input[name="' + elem + '"]').on('input', () => runValidate([elem]));
+		}
+	})();
+
+	function runValidate(inputName) {
+		inputName.forEach((inputName) => {
+			let pattern = inputsList[inputName].pattern;
+			let $target = $('input[name="' + inputName + '"]');
+			let value = $target.val().trim();
+			inputsList[inputName].valid = pattern.test(value);
+			let error = !inputsList[inputName].valid;
+			showError($target, error);
+		});
+	}
+
+	function showError($target, error) {
+		if ( error ) {
+			$target.addClass('error');
+			$target.removeClass('valid');
 		} else {
-			$(e.target).removeClass('error');
+			$target.removeClass('error');
+			$target.addClass('valid');
 		}
 	}
 
 	$('form').submit((e) => {
 		e.preventDefault();
-		$.ajax({
-			url: 'sendmail.php',
-			type: 'POST',
-			data: $('form').serialize(),
-			success: function () {
-				console.log('Запрос отправлен');
-			},
-			error: function () {
-				console.log('Возникла ошибка при отправке');
-			}
-		});
-		$('form').fadeOut();
-		window.setTimeout(() => {
-			$('form').html('<h2>Отправлено!</h2><p>Я с Вами обязательно свяжусь</p>');
-			$('form').fadeIn();
-		}, 500);
+		let inputCnt = 0, validCnt = 0;
+		for ( let elem in inputsList) {
+			inputCnt ++;
+			validCnt += (inputsList[elem].valid ? 1 : 0);
+		}
+		if ( validCnt === inputCnt ) {
+			$.ajax({
+				url: 'sendmail.php',
+				type: 'POST',
+				data: $('form').serialize(),
+				success: function () {
+					console.log('Запрос отправлен');
+				},
+				error: function () {
+					console.log('Возникла ошибка при отправке');
+				}
+			});
+			$('form').fadeOut();
+			window.setTimeout(() => {
+				$('form').html('<h2>Отправлено!</h2><p>Я с Вами обязательно свяжусь</p>');
+				$('form').fadeIn();
+			}, 500);
+		} else {
+			runValidate(['name', 'tel', 'email']);
+		}
 	});
 
 });
