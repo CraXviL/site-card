@@ -37,34 +37,35 @@ $(document).ready(() => {
 
 	/* form sending */
 
-	const inputsList = {
-		name: {
+	const inputsList = [
+		{ 
+			name: 'name',
 			pattern: /^[ а-яё]{2,}$/gi,
 			valid: false
-		},
-		tel: {
+		},{ 
+			name: 'tel',
 			pattern: /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d- ]{7,10}$/,
 			valid: false
-		},
-		email: {
+		},{ 
+			name: 'email',
 			pattern: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
 			valid: false
 		}
-	};
+	];
 
 	(function() {
-		for (let elem in inputsList) {
-			$('input[name="' + elem + '"]').on('input', () => runValidate([elem]));
-		}
+		inputsList.forEach(elem => {
+			$('input[name="' + elem.name + '"]').on('input', () => runValidate([elem.name]));
+		});
 	})();
 
-	function runValidate(inputName) {
-		inputName.forEach((inputName) => {
-			let pattern = inputsList[inputName].pattern;
+	function runValidate(inputNameArr) {
+		inputNameArr.forEach(inputName => {
+			let input = inputsList.find(input => input.name === inputName);
 			let $target = $('input[name="' + inputName + '"]');
 			let value = $target.val().trim();
-			inputsList[inputName].valid = pattern.test(value);
-			let error = !inputsList[inputName].valid;
+			input.valid = input.pattern.test(value);
+			let error = !input.valid;
 			showError($target, error);
 		});
 	}
@@ -82,11 +83,11 @@ $(document).ready(() => {
 	$('form').submit((e) => {
 		e.preventDefault();
 		let inputCnt = 0, validCnt = 0;
-		for ( let elem in inputsList) {
+		inputsList.forEach(elem => {
 			inputCnt ++;
-			validCnt += (inputsList[elem].valid ? 1 : 0);
-		}
-		if ( validCnt === inputCnt ) {
+			validCnt += (elem.valid ? 1 : 0);
+		});
+		if (validCnt === inputCnt) {
 			$.ajax({
 				url: 'sendmail.php',
 				type: 'POST',
